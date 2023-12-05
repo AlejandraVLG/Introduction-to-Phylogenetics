@@ -4,10 +4,12 @@ Introduction to Phylogenetics
 ## Setting up
 
 Create and activate the conda enviroment
-> conda create -n phylogenetics python==3.7.4 pandas numpy \\
+> conda create -n phylogenetics python==3.7.4 pandas numpy
 > conda activate phylogenetics
 > conda install -c bioconda beast
 > conda install -c bioconda figtree
+> conda install -c bioconda mafft
+> conda install -c bioconda iqtree
 
 Activate the conda enviroment
 
@@ -21,18 +23,64 @@ Let’s plot and manipulate this tree:
 
 imagen 
 
-1) represent this tree in Newick format
+1) Represent this tree in Newick format
 2) Save the Newick string in a text file,
 3) Open a terminal/promt: text figtree
 4) Open it (File->Open) in FigTree
 5) Does the tree look the same? Try to make it look similar
 
-Answer 
+### Answer 
 
 > Newick: ((S1:0.4,(S2:0.1,S3:0.1):0.2):0.2,(S4:0.1,S5:0.1):0.3);
 > Select all the branches and use "Rotate"
 
+## Practical 2
 
+1) Run MAFFT of the primate-mtDNA_unaligned.fasta file in /home/Course_Material/data/primates/ :
+
+```
+mafft primate-mtDNA_unaligned.fasta  > primate-mtDNA_mafft-aligned.fasta
+```
+
+2) Compare aligned and unaligned files: what’s the difference?
+
+3) Run MAFFT also on the SARS-CoV-2 sequences. Why does it take longer?
+
+## Practical 3
+
+Run IQ-TREE 2 with GTR substitution model on the alignments we previously generated:
+
+```
+iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --prefix primate-mtDNA_mafft-aligned_iqtreeGTR
+```
+
+2) Find best model with IQ-TREE 2 (ModelFinder). Does it include rate variation? Does the tree differ from before (you can use FigTree for visualization)?
+
+```
+iqtree2  -s primate-mtDNA_mafft-aligned.fasta --prefix primate-mtDNA_mafft-aligned_iqtreeModelFinder
+```
+
+
+## Practical 3
+
+Measure branch support in IQ-TREE 2. First run bootstrap and TBE jointly:
+
+```
+iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR -b 100 --tbe --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_tbe
+```
+
+Then try the Ultra Fast Bootstrap:
+
+```
+iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR -B 1000 --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_ufboot
+```
+
+Finally the aLRT-SH:
+```
+iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --alrt 1000 --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_alrt
+```
+
+## Practical 5
 
 Try exploring the directory structure with the `ls`, `wc`, and `cd` commands. If you are unsure what a command does, use `man`, e.g. `man ls`. If you want to clear your terminal, use... `clear`. I originally downloaded these sequences from [NCBI](https://www.ncbi.nlm.nih.gov), which is a database of biological data, including genome sequences. Each sequence in the `ecoli` and `mtb` directories is the complete chromosome from an *E. coli* and *M. tuberculosis* genome, respectively. The files are all in the [FASTA](https://en.wikipedia.org/wiki/FASTA_format) format. 
 - What does FASTA stand for?
