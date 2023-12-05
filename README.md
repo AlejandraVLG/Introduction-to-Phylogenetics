@@ -4,7 +4,7 @@ Introduction to Phylogenetics
 ## Setting up
 
 Create and activate the conda enviroment
-> conda create -n phylogenetics python==3.7.4 pandas numpy
+> conda create -n phylogenetics python==3.7.4 pandas numpy \\
 > conda activate phylogenetics
 > conda install -c bioconda beast
 > conda install -c bioconda figtree
