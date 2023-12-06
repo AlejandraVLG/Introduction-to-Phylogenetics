@@ -4,12 +4,13 @@ Introduction to Phylogenetics
 ## Setting up
 
 Create and activate the conda enviroment
-> conda create -n phylogenetics python==3.7.4 pandas numpy
+> conda create -n phylogenetics python==3.8 pandas numpy
 > conda activate phylogenetics
-> conda install -c bioconda beast
 > conda install -c bioconda figtree
 > conda install -c bioconda mafft
 > conda install -c bioconda iqtree
+> conda install -c bioconda tracer
+> pip install beast
 
 Activate the conda enviroment
 
@@ -80,7 +81,27 @@ Finally the aLRT-SH:
 iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --alrt 1000 --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_alrt
 ```
 
-## Practical 5
+## Practical 4
+
+Run BEAST:
+
+1) Create an input xml file using BEAUti:
+Open BEAUti;
+	> File->”Import data”   ;   or, drag alignment file onto BEAUti window;
+ > Sites-> select GTR substitution model ;
+	> Trees-> Yule process ;
+	> Click “Generate BEAST File”.
+
+2) Run the xml file in BEAST
+> Give BEAST the .xml file created by BEAUti;
+> Or from the command line: beast primate-mtDNA_mafft-aligned_BEAST.xml
+
+4) Analyse the output in Tracer, TreeAnnotator and FigTree.
+
+5) Compare to maximum likelihood branch support.
+
+
+
 
 Try exploring the directory structure with the `ls`, `wc`, and `cd` commands. If you are unsure what a command does, use `man`, e.g. `man ls`. If you want to clear your terminal, use... `clear`. I originally downloaded these sequences from [NCBI](https://www.ncbi.nlm.nih.gov), which is a database of biological data, including genome sequences. Each sequence in the `ecoli` and `mtb` directories is the complete chromosome from an *E. coli* and *M. tuberculosis* genome, respectively. The files are all in the [FASTA](https://en.wikipedia.org/wiki/FASTA_format) format. 
 - What does FASTA stand for?
