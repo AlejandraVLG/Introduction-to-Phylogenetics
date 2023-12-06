@@ -87,10 +87,10 @@ Run BEAST:
 
 1) Create an input xml file using BEAUti:
 Open BEAUti;
-	> File->”Import data”   ;   or, drag alignment file onto BEAUti window;
- > Sites-> select GTR substitution model ;
-	> Trees-> Yule process ;
-	> Click “Generate BEAST File”.
+> File->”Import data”;   or, drag alignment file onto BEAUti window;
+> Sites-> select GTR substitution model ;
+> Trees-> Yule process ;
+> Click “Generate BEAST File”.
 
 2) Run the xml file in BEAST
 > Give BEAST the .xml file created by BEAUti;
