@@ -85,8 +85,8 @@ iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --alrt 1000 --prefix primat
 
 Run BEAST:
 
-1) Create an input xml file using BEAUti:
-Open BEAUti;
+1) Create an input xml file using BEAUti
+> Open BEAUti;
 > File->”Import data”;   or, drag alignment file onto BEAUti window;
 > Sites-> select GTR substitution model ;
 > Trees-> Yule process ;
@@ -96,9 +96,37 @@ Open BEAUti;
 > Give BEAST the .xml file created by BEAUti;
 > Or from the command line: beast primate-mtDNA_mafft-aligned_BEAST.xml
 
-4) Analyse the output in Tracer, TreeAnnotator and FigTree.
+3) Analyse the output in Tracer
+> File->”Import trace file”-> pick .log file created by BEAST ; or just drag it on Tracer the window
 
-5) Compare to maximum likelihood branch support.
+4) Compare to maximum likelihood branch support
+> Small ESS values (<100, in red) mean that the MCMC needs to run longer: 
+> BEAUti->MCMC->Length of chain
+
+5) Process the output in TreeAnnotator
+> Pick as input the .trees file created by BEAST. Choose output name
+
+6) Visualize tree in Fig tree
+> Pick as input the tree file created by TreeAnnotator. 
+
+7) Compare to maximum likelihood branch support.
+
+## Practical 5
+
+Run phylogeography analysis in BEAST:
+
+1) Create an input xml file using BEAUti like before from the SARS-CoV-2 genomes:
+Open BEAUti;
+	File->”Import data”   ;   or, drag alignment file onto BEAUti window;
+
+2) Within BEAUti, also include time and geographic information regarding the input sequences:
+	Tips->”Import dates”; select given “_dates.txt” file.
+	Traits->”Import traits”; select given “_locations.txt” file.
+	Traits->”Create partition from trait”.
+Click “Generate BEAST File”
+
+
+
 
 
 
