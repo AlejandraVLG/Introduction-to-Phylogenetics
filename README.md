@@ -1,6 +1,39 @@
 # Introduction-to-Phylogenetics
 Introduction to Phylogenetics
 
+# Timetable
+Subject to change depending on the pace of the class
+
+09:30 - 09:40 Welcome 
+09:40 - 10:30 Introduction to molecular phylogenetics
+10:30 - 11:15 Multiple sequence alignment
+11:15 - 11:30 Break
+11:30 - 12:30 Phylogenetic tree inference
+
+12:30 - 13:30 Lunch Break
+
+13:30 - 14:00	Practical: Phylogenetic inference with IQ-TREE
+14:00 - 15:00 Assessing tree confidence with the bootstrap
+		          Practical: Assessing tree confidence in IQ-TREE
+15:00 - 15:15 Break
+15:15 - 16:30 Introduction to bayesian phylogenetic inference
+		          Practical: Bayesian inference with BEAST
+16:30 - 17:30 Phylogenetic applications
+		          Practical: Viral Phylogeography with BEAST
+
+
+## Software setup: 
+We will provide access to a computer already setup for the workshop.
+(Optional) If you want to follow the workshop on your own computer:
+Install: FigTree; MAFFT; IQ-TREE v2; BEAGLE; BEAST v1, Tracer
+Data used in the course: data
+
+## Prerequisites:
+- Unix command line
+- Familiarity with basic concepts in evolution (descent from a common ancestor, sequence divergence due to mutations, natural selection).
+- Basic experience of examining DNA/protein sequence data.
+
+
 ## Setting up
 
 Create and activate the conda enviroment
@@ -131,3 +164,9 @@ beauti
 - Traits->”Import traits”; select given “_locations.txt” file
 - Traits->”Create partition from trait”
 - Click “Generate BEAST File”
+
+
+## Resources:
+- An example for phylogenomics from whole-genome resequencing: https://www.science.org/doi/epdf/10.1126/science.1258524
+- How to estimate the number of MCMC iterations required for convergence: https://journal.r-project.org/articles/RN-2006-002/RN-2006-002.pdf and associated R package CODA - specifically the Raftery-Lewis diagnostic.
+
