@@ -20,9 +20,7 @@ conda activate phylogenetics
 
 ## Practical 1
 
-Let’s plot and manipulate this tree:
-
-imagen 
+Plot and manipulate this tree:
 
 1) Represent this tree in Newick format
 2) Save the Newick string in a text file,
