@@ -4,15 +4,15 @@ Introduction to Phylogenetics
 ## Setting up
 
 Create and activate the conda enviroment
-> conda create -n phylogenetics python==3.8 pandas numpy
-> conda activate phylogenetics
-> conda install -c bioconda figtree
-> conda install -c bioconda mafft
-> conda install -c bioconda iqtree
-> conda install -c bioconda tracer
-> pip install beast
+- conda create -n phylogenetics python==3.8 pandas numpy
+- conda activate phylogenetics
+- conda install -c bioconda figtree
+- conda install -c bioconda mafft
+- conda install -c bioconda iqtree
+- conda install -c bioconda tracer
+- pip install beast
 
-Activate the conda enviroment
+> Activate the conda enviroment
 
 ```
 conda activate phylogenetics
