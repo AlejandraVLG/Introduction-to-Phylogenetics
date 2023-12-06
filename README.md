@@ -4,21 +4,21 @@ Introduction to Phylogenetics
 # Timetable
 Subject to change depending on the pace of the class
 
-09:30 - 09:40 Welcome 
-09:40 - 10:30 Introduction to molecular phylogenetics
-10:30 - 11:15 Multiple sequence alignment
-11:15 - 11:30 Break
-11:30 - 12:30 Phylogenetic tree inference
+- 09:30 - 09:40 Welcome 
+- 09:40 - 10:30 Introduction to molecular phylogenetics
+- 10:30 - 11:15 Multiple sequence alignment
+- 11:15 - 11:30 Break
+- 11:30 - 12:30 Phylogenetic tree inference
 
-12:30 - 13:30 Lunch Break
+- 12:30 - 13:30 Lunch Break
 
-13:30 - 14:00	Practical: Phylogenetic inference with IQ-TREE
-14:00 - 15:00 Assessing tree confidence with the bootstrap
-		          Practical: Assessing tree confidence in IQ-TREE
-15:00 - 15:15 Break
-15:15 - 16:30 Introduction to bayesian phylogenetic inference
+- 13:30 - 14:00	Practical: Phylogenetic inference with IQ-TREE
+- 14:00 - 15:00 Assessing tree confidence with the bootstrap
+		Practical: Assessing tree confidence in IQ-TREE
+- 15:00 - 15:15 Break
+- 15:15 - 16:30 Introduction to bayesian phylogenetic inference
 		          Practical: Bayesian inference with BEAST
-16:30 - 17:30 Phylogenetic applications
+- 16:30 - 17:30 Phylogenetic applications
 		          Practical: Viral Phylogeography with BEAST
 
 
@@ -43,7 +43,7 @@ Create and activate the conda enviroment
 - conda install -c bioconda mafft
 - conda install -c bioconda iqtree
 - conda install -c bioconda tracer
-- conda install -c bioconda beast
+- conda install -c "bioconda/label/cf201901" beast
 
 Activate the conda enviroment
 
