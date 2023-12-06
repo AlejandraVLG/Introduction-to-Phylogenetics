@@ -4,8 +4,7 @@ Introduction to Phylogenetics
 # Timetable
 Subject to change depending on the pace of the class
 
-- 09:30 - 09:40 Welcome 
-- 09:40 - 10:30 Introduction to molecular phylogenetics
+- 09:30 - 10:30 Introduction to molecular phylogenetics
 - 10:30 - 11:15 Multiple sequence alignment
 - 11:15 - 11:30 Break
 - 11:30 - 12:30 Phylogenetic tree inference
@@ -17,9 +16,9 @@ Subject to change depending on the pace of the class
 		Practical: Assessing tree confidence in IQ-TREE
 - 15:00 - 15:15 Break
 - 15:15 - 16:30 Introduction to bayesian phylogenetic inference
-		          Practical: Bayesian inference with BEAST
+		Practical: Bayesian inference with BEAST
 - 16:30 - 17:30 Phylogenetic applications
-		          Practical: Viral Phylogeography with BEAST
+		Practical: Viral Phylogeography with BEAST
 
 
 ## Software setup: 
@@ -51,7 +50,13 @@ Activate the conda enviroment
 conda activate phylogenetics
 ```
 
-## Practical 1
+Deactivate the conda enviroment
+
+```
+conda deactivate
+```
+
+## Practical 1 Newick (Introduction to phylogenetics)
 
 Plot and manipulate this tree:
 
@@ -65,7 +70,7 @@ figtree
 5) Does the tree look the same? Try to make it look similar
 
 
-## Practical 2
+## Practical 2 Alignment (Sequence alignment)
 
 1) Run MAFFT of the primate-mtDNA_unaligned.fasta file in /home/Course_Material/data/primates/ :
 
@@ -77,7 +82,7 @@ Compare aligned and unaligned files: what’s the difference?
 
 Run MAFFT also on the SARS-CoV-2 sequences. Why does it take longer?
 
-## Practical 3
+## Practical 3 Maximum likelihood phylogenetic (Phylogenetic inference)
 
 1) Run IQ-TREE 2 with GTR substitution model on the alignments we previously generated:
 
@@ -92,7 +97,7 @@ iqtree2  -s primate-mtDNA_mafft-aligned.fasta --prefix primate-mtDNA_mafft-align
 ```
 
 
-## Practical 4
+## Practical 4 Bootstrap
 
 1) Measure branch support in IQ-TREE 2. First run bootstrap and TBE jointly:
 
@@ -111,7 +116,7 @@ iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR -B 1000 --prefix primate-mt
 iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --alrt 1000 --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_alrt
 ```
 
-## Practical 5
+## Practical 5 Bayesian phylogenetics inference
 
 Run BEAST:
 
@@ -148,7 +153,7 @@ treeannotator
 
 7) Compare to maximum likelihood branch support
 
-## Practical 6
+## Practical 6 Phylogenetic applications
 
 Run phylogeography analysis in BEAST
 
