@@ -10,7 +10,7 @@ Create and activate the conda enviroment
 - conda install -c bioconda mafft
 - conda install -c bioconda iqtree
 - conda install -c bioconda tracer
-- pip install beast
+- conda install -c bioconda beast
 
 Activate the conda enviroment
 
