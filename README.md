@@ -26,7 +26,10 @@ imagen
 
 1) Represent this tree in Newick format
 2) Save the Newick string in a text file,
-3) Open a terminal/promt: text figtree
+3) Open a terminal/promt:
+```
+figtree
+``` 
 4) Open it (File->Open) in FigTree
 5) Does the tree look the same? Try to make it look similar
 
@@ -39,13 +42,13 @@ imagen
 mafft primate-mtDNA_unaligned.fasta  > primate-mtDNA_mafft-aligned.fasta
 ```
 
-2) Compare aligned and unaligned files: what’s the difference?
+Compare aligned and unaligned files: what’s the difference?
 
-3) Run MAFFT also on the SARS-CoV-2 sequences. Why does it take longer?
+Run MAFFT also on the SARS-CoV-2 sequences. Why does it take longer?
 
 ## Practical 3
 
-Run IQ-TREE 2 with GTR substitution model on the alignments we previously generated:
+1) Run IQ-TREE 2 with GTR substitution model on the alignments we previously generated:
 
 ```
 iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --prefix primate-mtDNA_mafft-aligned_iqtreeGTR
@@ -60,19 +63,19 @@ iqtree2  -s primate-mtDNA_mafft-aligned.fasta --prefix primate-mtDNA_mafft-align
 
 ## Practical 4
 
-Measure branch support in IQ-TREE 2. First run bootstrap and TBE jointly:
+1) Measure branch support in IQ-TREE 2. First run bootstrap and TBE jointly:
 
 ```
 iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR -b 100 --tbe --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_tbe
 ```
 
-Then try the Ultra Fast Bootstrap:
+2) Then try the Ultra Fast Bootstrap:
 
 ```
 iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR -B 1000 --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_ufboot
 ```
 
-Finally the aLRT-SH:
+3) Finally the aLRT-SH:
 ```
 iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --alrt 1000 --prefix primate-mtDNA_mafft-aligned_iqtreeGTR_alrt
 ```
@@ -82,16 +85,20 @@ iqtree2  -s primate-mtDNA_mafft-aligned.fasta -m GTR --alrt 1000 --prefix primat
 Run BEAST:
 
 1) Create an input xml file using BEAUti
-- Open BEAUti;
+- Open BEAUti
+```
+beauti
+```
 - File->”Import data”; or, drag alignment file onto BEAUti window
 - Sites-> select GTR substitution model 
 - Trees-> Yule process 
 - Click “Generate BEAST File”
 
 2) Run the xml file in BEAST
-- Give BEAST the .xml file created by BEAUti;
-- Or from the command line: beast primate-mtDNA_mafft-aligned_BEAST.xml
-
+- Give BEAST the .xml file created by BEAUti; or from the command line: 
+```
+beast primate-mtDNA_mafft-aligned_BEAST.xml
+```
 3) Analyse the output in Tracer
 - File->”Import trace file”-> pick .log file created by BEAST ; or just drag it on Tracer the window
 
@@ -100,6 +107,9 @@ Run BEAST:
 - BEAUti->MCMC->Length of chain
 
 5) Process the output in TreeAnnotator
+```
+treeannotator
+```
 - Pick as input the .trees file created by BEAST. Choose output name
 
 6) Visualize tree in Fig tree
@@ -112,7 +122,11 @@ Run BEAST:
 Run phylogeography analysis in BEAST
 
 1) Create an input xml file using BEAUti like before from the SARS-CoV-2 genomes:
-- Open BEAUti; File->”Import data”;   or, drag alignment file onto BEAUti window
+- Open BEAUti
+```
+beauti
+```
+- File->”Import data”;   or, drag alignment file onto BEAUti window
 
 2) Within BEAUti, also include time and geographic information regarding the input sequences:
 - Tips->”Import dates”; select given “_dates.txt” file
